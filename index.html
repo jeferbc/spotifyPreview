@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spotify Preview</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" media="screen" title="no title">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-4" >
+                <div class="content">
+                    <h1 class="text-center title">Spotify Preview</h1>
+                    <div class="form">
+                        <input type="text" class="form-control" placeholder="Search for..." id="search">
+                    </div><!-- /input-group -->
+                    <div class="results">
+
+                    </div>
+                </div>
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </div>
+    <script id="songs-template" type="text/x-handlebars-template">
+        <div class="songs">
+            <img src="{{album_image}}" alt="image">
+            <div class="song">
+                <h4><strong>{{name}}</strong></h4>
+                <h5>{{artist}}</h5>
+                <audio controls>
+                    <source src="{{preview_url}}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
